@@ -1,13 +1,14 @@
-#include "ft_list.h"
+#include <stdio.h>
+#include "ft_create_elem.c"
 
 int main(void)
 {
-  t_list  *emp;
-  int f;
+	t_list  *emp;
+	int f;
 
-  emp = NUL;
-  f = 15;
-  (void)f;
-  emp = ft_create_elem(&f);
-  return (0);
+	emp = NUL;
+	f = 15;
+	emp = ft_create_elem(&f);
+	printf("%d", *(emp->data));
+	return (0);
 }

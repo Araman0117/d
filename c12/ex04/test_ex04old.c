@@ -1,4 +1,4 @@
-#include "ft_list_push_front.c"
+#include "ft_list_push_back.c"
 #include <stdio.h>
 
 int main(void)
@@ -10,7 +10,7 @@ int main(void)
 	list = NUL;
 	list = ft_create_elem(&a);
 	begin_list = &list;
-	ft_list_push_front(begin_list, &b);
+	ft_list_push_back(begin_list, &b);
 	while (list != NUL)
 	{
 		printf("%d\n", *(list->data));

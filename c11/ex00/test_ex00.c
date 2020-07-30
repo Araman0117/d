@@ -33,7 +33,7 @@ void	ft_putnbr(int nb)
 int		main(void)
 {
 	int arr[] = {13, 23, 32, 34, 35, 36, 48, 47, 59};
-	int len = 9;
+	int len = -9;
 	ft_foreach(arr, len, &ft_putnbr);
 	return (0);
 }
