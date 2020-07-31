@@ -10,19 +10,24 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_display_file
-
-SRC = main.c
+TARGET = ft_display_file
 
 CFLAGS = -Wall -Wextra -Werror
 
-all: $(NAME)
+.PHONY: all clean fclean
 
-$(NAME):
-	gcc $(CFLAGS) $(SRC) -o $(NAME)
+all: $(TARGET)
+
+main.o: main.c
+	gcc $(CFLAGS) -c -o main.o main.c
 
 clean:
-	rm -f *.o
+	rm -rf *.o
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(TARGET)
+
+$(TARGET): main.o
+	gcc $(CFLAGS) main.c -o $(TARGET)
+
+re: fclean all

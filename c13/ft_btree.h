@@ -1,5 +1,5 @@
-#ifndef FT_BTREE_H
-# define FT_BTREE_H
+//#ifndef FT_BTREE_H
+//# define FT_BTREE_H
 
 typedef struct		s_btree
 {
@@ -8,4 +8,4 @@ typedef struct		s_btree
 	void			*item;
 }					t_btree;
 
-#endif
+//#endif
