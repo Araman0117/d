@@ -15,7 +15,7 @@ t_btree		*btree_create_node(void *item)
 void		function(void *item)
 {
 	char* g = "done!";
-	*((char*)item) = *g;
+	item = g;
 }
 
 int			main(void)
