@@ -4,8 +4,27 @@
 int main()
 {
  int size = 5;
- char strs[][] = {"11111", "22222", "33333", "44444", "55555"};
+ int i = 0;
+ char **strs;
+ t_list *beg;
+ char *str;
 
- ft_list_push_strs(size, strs);
+ strs = (char**)malloc(sizeof(char*) * (size + 1));
+ strs[0] = "11111";
+ strs[1] = "22222";
+ strs[2] = "33333";
+ strs[3] = "44444";
+ strs[4] = "55555";
+
+ beg = ft_list_push_strs(size, strs);
+
+ while (i < size)
+ {
+	str = beg->data;
+	write(1, str, 5);
+	write(1, "\n", 1);
+	beg = beg->next;
+	i++;
+ }
  return (0);
 }
