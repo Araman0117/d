@@ -1,3 +1,4 @@
+#include "ft_list_at.c"
 #include "../ex04/ft_list_push_back.c"
 #include "../ex02/ft_list_size.c"
 #include <stdio.h>
@@ -7,6 +8,8 @@
 int main()
 {
  t_list *f_elem = ft_create_elem("fst");
+ t_list *print;
+ t_list *ret;
  t_list **link = &f_elem;
 
  ft_list_push_back(link, "snd");
@@ -15,22 +18,17 @@ int main()
  ft_list_push_back(link, "5th");
  ft_list_push_back(link, "6th");
  
- printf("%d elems to free\n"
-   , ft_list_size(f_elem));
-
- t_list *k = f_elem;
- t_list *tmp;
- while (k != NULL)
+ print = f_elem;
+ while (print)
  {
-  k->data = NULL;
-  tmp = k->next;
-  free(k);
-  k = tmp;
+  write(1, print->data, 3);
+  write(1, "\n", 1);
+  print = print->next;
  }
- 
-printf("%d elems left\n"
-   , ft_list_size(tmp));
 
- char *str = f_elem
+ ret = ft_list_at(f_elem, 3);
+ write(1, ret->data, 3);
+ write(1, "\n", 1);
+
  return (0);
 }

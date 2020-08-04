@@ -1,18 +1,21 @@
 #include "../ft_list.h"
 #include <stdlib.h>
-#include <unistd.h>
 
-t_list **ft_list_clear
-(t_list **b, void (*free_fct)(void *))
+void ft_list_clear
+(t_list **link, void (*free_fct)(void*))
 {
+ t_list *curr = (*link)->next;
  t_list *tmp;
 
- while (*b != NULL)
+ while (curr)
  {
-  tmp = (*b)->next;
-  free_fct((*b)->data);
-  free((*b));
-  (*b) = tmp;
+  tmp = curr;
+  curr = curr->next;
+  free_fct(tmp->data);
+  free(tmp);
  }
- return (b);
+ free_fct((*link)->data);
+ (*link)->next = NULL;
+ free(*link);
+ (*link) = NULL;
 }
